@@ -2,7 +2,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
   Logo,
-  SmallLogo,
   Closes,
   HeaderSearch,
   Flag,
@@ -51,7 +50,8 @@ const Header = (props) => {
         {/* Logo */}
         <div className="header-left ">
           <Link to="/" className="logo logo-normal">
-            <img src={Logo} alt="" />
+            {/* <img src={Logo} alt="" /> */}
+            Logo Here
           </Link>
         </div>
         {/* /Logo */}

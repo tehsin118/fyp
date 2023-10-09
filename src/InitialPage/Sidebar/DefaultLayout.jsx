@@ -8,12 +8,12 @@ import { Scrollbars } from "react-custom-scrollbars";
 import FeatherIcon from "feather-icons-react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import ProductList from "../../MainPage/Product/ProductList";
 import CategoryList from "../../MainPage/Product/CategoryList";
 import BrandList from "../../MainPage/Product/BrandList";
 import SubCategoryList from "../../MainPage/Product/SubCategoryTable";
 import PrintBarcode from "../../MainPage/Product/PrintBarcode";
 import ImportProduct from "../../MainPage/Product/ImportProduct";
+import ProductList from "../../MainPage/Product/ProductList";
 const DefaultLayout = () => {
   // const { match } = props;
   const [isSideMenu, setSideMenu] = useState("");

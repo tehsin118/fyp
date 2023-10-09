@@ -5,10 +5,11 @@ import { barcode1, Printer, Product69 } from "../../EntryFile/imagePath";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import PropTypes from "prop-types";
 
-const ProductDetails = () => {
+const ProductDetails = (props) => {
   return (
-    <div className="page-wrapper">
+    <div className={`page-wrapper ${props.customSpace}`}>
       <div className="content">
         <div className="page-header">
           <div className="page-title">
@@ -94,23 +95,18 @@ const ProductDetails = () => {
             <div className="card">
               <div className="card-body">
                 <div className="slider-product-details">
-                    <OwlCarousel
-                      className="owl-theme"
-                      items={1}
-                      dots={false}
-                      nav
-                    >
-                      <div className="slider-product item">
-                        <img src={Product69} alt="img" />
-                        <h4>macbookpro.jpg</h4>
-                        <h6>581kb</h6>
-                      </div>
-                      <div className="slider-product item">
-                        <img src={Product69} alt="img" />
-                        <h4>macbookpro.jpg</h4>
-                        <h6>581kb</h6>
-                      </div>
-                    </OwlCarousel>
+                  <OwlCarousel className="owl-theme" items={1} dots={false} nav>
+                    <div className="slider-product item">
+                      <img src={Product69} alt="img" />
+                      <h4>macbookpro.jpg</h4>
+                      <h6>581kb</h6>
+                    </div>
+                    <div className="slider-product item">
+                      <img src={Product69} alt="img" />
+                      <h4>macbookpro.jpg</h4>
+                      <h6>581kb</h6>
+                    </div>
+                  </OwlCarousel>
                 </div>
               </div>
             </div>
@@ -121,5 +117,7 @@ const ProductDetails = () => {
     </div>
   );
 };
-
+ProductDetails.propTypes = {
+  customSpace: PropTypes.string.isRequired, // Assuming customSpace is a string
+};
 export default ProductDetails;

@@ -24,6 +24,7 @@ import "react-select2-wrapper/css/select2.css";
 import { Modal } from "react-bootstrap";
 import AddProduct from "./AddProduct";
 import EditProduct from "./EditProduct";
+import ProductDetails from "./productDetails";
 
 const ProductList = () => {
   const [inputfilter, setInputfilter] = useState(false);
@@ -281,10 +282,10 @@ const ProductList = () => {
       render: () => (
         <>
           <>
-            <Link className="me-3" to="/dream-pos/product/product-details">
+            <a className="me-3" onClick={handleProductDetailsModal}>
               <img src={EyeIcon} alt="img" />
-            </Link>
-            {/* <Link className="me-3" to="/dream-pos/product/editproduct-product"> */}
+            </a>
+
             <a className="me-3" onClick={handleEditProductModal}>
               <img src={EditIcon} alt="img" />
             </a>
@@ -298,9 +299,14 @@ const ProductList = () => {
   ];
   const [addProductModal, setAddProductModal] = useState(false);
   const [editProductModal, setEditProductModal] = useState(false);
+  const [productDetailModal, setProductDetailModal] = useState(false);
 
   const handleProductModal = () => setAddProductModal(!addProductModal);
   const handleEditProductModal = () => setEditProductModal(!editProductModal);
+
+  const handleProductDetailsModal = () =>
+    setProductDetailModal(!productDetailModal);
+
   return (
     <>
       <div className="page-wrapper">
@@ -416,15 +422,27 @@ const ProductList = () => {
           {/* /product list */}
         </div>
       </div>
-
+      {/* Add Product Modal */}
       <Modal show={addProductModal} onHide={handleProductModal} size="xl">
         <Modal.Body>
           <AddProduct customSpace="m-0 p-0" />
         </Modal.Body>
       </Modal>
+      {/* Edit Product Modal */}
       <Modal show={editProductModal} onHide={handleEditProductModal} size="xl">
         <Modal.Body>
           <EditProduct customSpace="m-0 p-0" />
+        </Modal.Body>
+      </Modal>
+
+      {/* Product Details Modal */}
+      <Modal
+        show={productDetailModal}
+        onHide={handleProductDetailsModal}
+        size="xl"
+      >
+        <Modal.Body>
+          <ProductDetails customSpace="m-0 p-0" />
         </Modal.Body>
       </Modal>
     </>

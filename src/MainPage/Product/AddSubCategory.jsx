@@ -5,13 +5,14 @@ import Select2 from "react-select2-wrapper";
 import "react-select2-wrapper/css/select2.css";
 
 const options = [
-    { id: 1, text: "Choose Category", text: "Choose Category" },
-    { id: 2, text: "Category", text: "Category" },
+  { id: 1, text: "Choose Category", text: "Choose Category" },
+  { id: 2, text: "Category", text: "Category" },
 ];
+import PropTypes from "prop-types";
 
-const AddSubCategory = () => {
+const AddSubCategory = (props) => {
   return (
-    <div className="page-wrapper">
+    <div className={`page-wrapper ${props.customSpace}`}>
       <div className="content">
         <div className="page-header">
           <div className="page-title">
@@ -55,7 +56,6 @@ const AddSubCategory = () => {
               </div>
               <div className="col-lg-12">
                 <button className="btn btn-submit me-2">Submit</button>
-                <button className="btn btn-cancel">Cancel</button>
               </div>
             </div>
           </div>
@@ -65,5 +65,7 @@ const AddSubCategory = () => {
     </div>
   );
 };
-
+AddSubCategory.propTypes = {
+  customSpace: PropTypes.string.isRequired, // Assuming customSpace is a string
+};
 export default AddSubCategory;

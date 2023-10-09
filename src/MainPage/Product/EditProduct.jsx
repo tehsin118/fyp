@@ -2,9 +2,11 @@
 /* eslint-disable no-dupe-keys */
 import React, { useState } from "react";
 import { Samsung, Upload } from "../../EntryFile/imagePath";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import Select2 from "react-select2-wrapper";
 import "react-select2-wrapper/css/select2.css";
+import PropTypes from "prop-types";
+
 const options1 = [
   { id: 1, text: "Computers", text: "Computers" },
   { id: 2, text: "Mac", text: "Mac" },
@@ -31,11 +33,10 @@ const options7 = [
   { id: 2, text: "Open", text: "Open" },
 ];
 
-const EditProduct = () => {
-
+const EditProduct = (props) => {
   return (
     <>
-      <div className="page-wrapper">
+      <div className={`page-wrapper ${props.customSpace}`}>
         <div className="content">
           <div className="page-header">
             <div className="page-title">
@@ -207,10 +208,7 @@ const EditProduct = () => {
                   </div>
                 </div>
                 <div className="col-lg-12">
-                  <button
-                    href="#"
-                    className="btn btn-submit me-2"
-                  >
+                  <button href="#" className="btn btn-submit me-2">
                     Update
                   </button>
                   <Link to="/productlist" className="btn btn-cancel">
@@ -226,5 +224,7 @@ const EditProduct = () => {
     </>
   );
 };
-
+EditProduct.propTypes = {
+  customSpace: PropTypes.string.isRequired, // Assuming customSpace is a string
+};
 export default EditProduct;

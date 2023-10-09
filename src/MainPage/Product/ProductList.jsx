@@ -21,6 +21,9 @@ import {
 } from "../../EntryFile/imagePath";
 import Select2 from "react-select2-wrapper";
 import "react-select2-wrapper/css/select2.css";
+import { Modal } from "react-bootstrap";
+import AddProduct from "./AddProduct";
+import EditProduct from "./EditProduct";
 
 const ProductList = () => {
   const [inputfilter, setInputfilter] = useState(false);
@@ -281,9 +284,10 @@ const ProductList = () => {
             <Link className="me-3" to="/dream-pos/product/product-details">
               <img src={EyeIcon} alt="img" />
             </Link>
-            <Link className="me-3" to="/dream-pos/product/editproduct-product">
+            {/* <Link className="me-3" to="/dream-pos/product/editproduct-product"> */}
+            <a className="me-3" onClick={handleEditProductModal}>
               <img src={EditIcon} alt="img" />
-            </Link>
+            </a>
             <Link className="confirm-text" to="#" onClick={confirmText}>
               <img src={DeleteIcon} alt="img" />
             </Link>
@@ -292,7 +296,11 @@ const ProductList = () => {
       ),
     },
   ];
+  const [addProductModal, setAddProductModal] = useState(false);
+  const [editProductModal, setEditProductModal] = useState(false);
 
+  const handleProductModal = () => setAddProductModal(!addProductModal);
+  const handleEditProductModal = () => setEditProductModal(!editProductModal);
   return (
     <>
       <div className="page-wrapper">
@@ -304,14 +312,11 @@ const ProductList = () => {
               <h6>Manage your products</h6>
             </div>
             {/* add new product */}
-            <div className="page-btn d-none">
-              <Link
-                to="/dream-pos/product/addproduct-product"
-                className="btn btn-added"
-              >
+            <div className="page-btn ">
+              <a className="btn btn-added" onClick={handleProductModal}>
                 <img src={PlusIcon} alt="img" className="me-1" />
                 Add New Product
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -411,6 +416,17 @@ const ProductList = () => {
           {/* /product list */}
         </div>
       </div>
+
+      <Modal show={addProductModal} onHide={handleProductModal} size="xl">
+        <Modal.Body>
+          <AddProduct customSpace="m-0 p-0" />
+        </Modal.Body>
+      </Modal>
+      <Modal show={editProductModal} onHide={handleEditProductModal} size="xl">
+        <Modal.Body>
+          <EditProduct customSpace="m-0 p-0" />
+        </Modal.Body>
+      </Modal>
     </>
   );
 };

@@ -9,6 +9,11 @@ import FeatherIcon from "feather-icons-react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ProductList from "../../MainPage/Product/ProductList";
+import CategoryList from "../../MainPage/Product/CategoryList";
+import BrandList from "../../MainPage/Product/BrandList";
+import SubCategoryList from "../../MainPage/Product/SubCategoryTable";
+import PrintBarcode from "../../MainPage/Product/PrintBarcode";
+import ImportProduct from "../../MainPage/Product/ImportProduct";
 const DefaultLayout = () => {
   // const { match } = props;
   const [isSideMenu, setSideMenu] = useState("");
@@ -110,12 +115,8 @@ const DefaultLayout = () => {
                     <li className="submenu-open">
                       <h6 className="submenu-hdr">Products</h6>
                       <ul>
+                        {/* product list */}
                         <li
-                          // className={
-                          //   pathname.includes("productlist-product")
-                          //     ? "active"
-                          //     : ""
-                          // }
                           className={path == "productlist" ? "active" : ""}
                           onClick={() => setPath("productlist")}
                         >
@@ -124,117 +125,70 @@ const DefaultLayout = () => {
                             <span>Products</span>
                           </a>
                         </li>
+
+                        {/* product category list */}
+
                         <li
-                          className={
-                            pathname.includes("addproduct-product")
-                              ? "active"
-                              : ""
-                          }
+                          className={path == "categorylist" ? "active" : ""}
+                          onClick={() => setPath("categorylist")}
                         >
-                          <Link
-                            className={
-                              pathname.includes("addproduct-") ? "active" : ""
-                            }
-                            to="/dream-pos/product/addproduct-product"
-                          >
-                            <FeatherIcon icon="plus-square" />
-                            <span>Create Product</span>
-                          </Link>
-                        </li>
-                        <li
-                          className={
-                            pathname.includes("categorylist-product")
-                              ? "active"
-                              : ""
-                          }
-                        >
-                          <Link
-                            className={
-                              pathname.includes("categorylist-") ? "active" : ""
-                            }
-                            to="/dream-pos/product/categorylist-product"
-                          >
+                          <a>
                             <FeatherIcon icon="codepen" />
                             <span>Category</span>
-                          </Link>
+                          </a>
                         </li>
+
+                        {/* brands */}
                         <li
-                          className={
-                            pathname.includes("brandlist-product")
-                              ? "active"
-                              : ""
-                          }
+                          className={path == "brandlist" ? "active" : ""}
+                          onClick={() => setPath("brandlist")}
                         >
-                          <Link
-                            className={
-                              pathname.includes("brandlist-") ? "active" : ""
-                            }
-                            to="/dream-pos/product/brandlist-product"
-                          >
+                          <a>
                             {/* <i data-feather="tag" /> */}
                             <FeatherIcon icon="tag" />
                             <span>Brands</span>
-                          </Link>
+                          </a>
                         </li>
+
+                        {/* subcategory */}
                         <li
-                          className={
-                            pathname.includes("subcategorytable-product")
-                              ? "active"
-                              : ""
-                          }
+                          className={path == "subcategory" ? "active" : ""}
+                          onClick={() => setPath("subcategory")}
                         >
-                          <Link
-                            className={
-                              pathname.includes("subcategorytable-")
-                                ? "active"
-                                : ""
-                            }
-                            to="/dream-pos/product/subcategorytable-product"
-                          >
+                          <a>
                             <FeatherIcon icon="speaker" />
                             <span>Sub Category</span>
-                          </Link>
+                          </a>
                         </li>
+
+                        {/* barcode */}
+
                         <li
-                          className={
-                            pathname.includes("printbarcode-product")
-                              ? "active"
-                              : ""
-                          }
+                          className={path == "printbarcode" ? "active" : ""}
+                          onClick={() => setPath("printbarcode")}
                         >
-                          <Link
-                            className={
-                              pathname.includes("printbarcode-") ? "active" : ""
-                            }
-                            to="/dream-pos/product/printbarcode-product"
-                          >
-                            {/* <i data-feather="align-justify" /> */}
+                          <a>
                             <FeatherIcon icon="align-justify" />
                             <span>Print Barcode</span>
-                          </Link>
+                          </a>
                         </li>
+
+                        {/* import products */}
+
                         <li
-                          className={
-                            pathname.includes("importproduct-product")
-                              ? "active"
-                              : ""
-                          }
+                          className={path == "importproduct" ? "active" : ""}
+                          onClick={() => setPath("importproduct")}
                         >
-                          <Link
-                            className={
-                              pathname.includes("importproduct-")
-                                ? "active"
-                                : ""
-                            }
-                            to="/dream-pos/product/importproduct-product"
-                          >
-                            {/* <i data-feather="minimize-2" /> */}
+                          <a>
                             <FeatherIcon icon="minimize-2" />
                             <span>Import Products</span>
-                          </Link>
+                          </a>
                         </li>
                       </ul>
                     </li>
+
+                    {/* sales */}
+
                     <li className="submenu-open">
                       <h6 className="submenu-hdr">Sales</h6>
                       <ul>
@@ -1708,6 +1662,11 @@ const DefaultLayout = () => {
 
         <div>{path == "dashboard" ? <Dashboard /> : <></>}</div>
         <div>{path == "productlist" ? <ProductList /> : <></>}</div>
+        <div>{path == "categorylist" ? <CategoryList /> : <></>}</div>
+        <div>{path == "brandlist" ? <BrandList /> : <></>}</div>
+        <div>{path == "subcategory" ? <SubCategoryList /> : <></>}</div>
+        <div>{path == "printbarcode" ? <PrintBarcode /> : <></>}</div>
+        <div>{path == "importproduct" ? <ImportProduct /> : <></>}</div>
       </div>
       <div className="sidebar-overlay"></div>
     </>

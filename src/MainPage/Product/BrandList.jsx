@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Table from "../../EntryFile/datatable";
 import { Link } from "react-router-dom";
 import Tabletop from "../../EntryFile/tabletop";
+import { Modal } from "react-bootstrap";
+
 import {
   ClosesIcon,
   Excel,
@@ -24,6 +26,7 @@ import {
   DeleteIcon,
 } from "../../EntryFile/imagePath";
 import Swal from "sweetalert2";
+import AddBrand from "./AddBrand";
 
 const BrandList = () => {
   const [inputfilter, setInputfilter] = useState(false);
@@ -116,7 +119,9 @@ const BrandList = () => {
       ),
     },
   ];
+  const [addBrandModal, setAddBrandModal] = useState(false);
 
+  const handleBrandModal = () => setAddBrandModal(!addBrandModal);
   return (
     <>
       <div className="page-wrapper">
@@ -127,13 +132,10 @@ const BrandList = () => {
               <h6>Manage your Brand</h6>
             </div>
             <div className="page-btn">
-              <Link
-                to="/dream-pos/product/addbrand-product"
-                className="btn btn-added"
-              >
+              <a className="btn btn-added" onClick={handleBrandModal}>
                 <img src={PlusIcon} alt="img" className="me-1" />
                 Add Brand
-              </Link>
+              </a>
             </div>
           </div>
           {/* /product list */}
@@ -142,9 +144,9 @@ const BrandList = () => {
               <Tabletop inputfilter={inputfilter} togglefilter={togglefilter} />
               {/* /Filter */}
               <div
-                className={`card mb-0 ${ inputfilter ? "toggleCls" : ""}`}
+                className={`card mb-0 ${inputfilter ? "toggleCls" : ""}`}
                 id="filter_inputs"
-                style={{ display: inputfilter ? "block" :"none"}}
+                style={{ display: inputfilter ? "block" : "none" }}
               >
                 <div className="card-body pb-0">
                   <div className="row">
@@ -184,6 +186,12 @@ const BrandList = () => {
           {/* /product list */}
         </div>
       </div>
+
+      <Modal show={addBrandModal} onHide={handleBrandModal} size="xl">
+        <Modal.Body>
+          <AddBrand customSpace="m-0 p-0" />
+        </Modal.Body>
+      </Modal>
     </>
   );
 };

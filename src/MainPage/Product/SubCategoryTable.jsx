@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Table from "../../EntryFile/datatable";
 import { Link } from "react-router-dom";
-import Tabletop from "../../EntryFile/tabletop"
+import Tabletop from "../../EntryFile/tabletop";
 import Swal from "sweetalert2";
 import {
   ClosesIcon,
@@ -28,6 +28,8 @@ import {
 } from "../../EntryFile/imagePath";
 import Select2 from "react-select2-wrapper";
 import "react-select2-wrapper/css/select2.css";
+import { Modal } from "react-bootstrap";
+import AddSubCategory from "./AddSubCategory";
 
 const SubCategoryList = () => {
   const options2 = [
@@ -171,7 +173,10 @@ const SubCategoryList = () => {
       render: () => (
         <>
           <>
-            <Link className="me-3" to="/dream-pos/product/editsubcategory-product">
+            <Link
+              className="me-3"
+              to="/dream-pos/product/editsubcategory-product"
+            >
               <img src={EditIcon} alt="img" />
             </Link>
             <Link className="confirm-text" to="#" onClick={confirmText}>
@@ -183,6 +188,10 @@ const SubCategoryList = () => {
     },
   ];
 
+  const [addSubCatModal, setAddSubCatModal] = useState(false);
+
+  const handleSubCatModal = () => setAddSubCatModal(!addSubCatModal);
+
   return (
     <>
       <div className="page-wrapper">
@@ -193,13 +202,10 @@ const SubCategoryList = () => {
               <h6>View/Search product Category</h6>
             </div>
             <div className="page-btn">
-              <Link
-                to="/dream-pos/product/addsubcategory-product"
-                className="btn btn-added"
-              >
+              <a className="btn btn-added" onClick={handleSubCatModal}>
                 <img src={PlusIcon} alt="img" className="me-1" />
                 Add Sub Category
-              </Link>
+              </a>
             </div>
           </div>
           {/* /product list */}
@@ -270,7 +276,15 @@ const SubCategoryList = () => {
           {/* /product list */}
         </div>
       </div>
+
+      <Modal show={addSubCatModal} onHide={handleSubCatModal} size="xl">
+        <Modal.Body>
+          {" "}
+          <AddSubCategory customSpace="m-0 p-0" />{" "}
+        </Modal.Body>
+      </Modal>
     </>
   );
 };
+
 export default SubCategoryList;

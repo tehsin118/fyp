@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Table from "../../EntryFile/datatable";
 import { Link } from "react-router-dom";
 import Tabletop from "../../EntryFile/tabletop";
+import ReactDOM from "react-dom"; // Add this line
+
 import {
   ClosesIcon,
   Excel,
@@ -25,6 +27,8 @@ import {
 import Select2 from "react-select2-wrapper";
 import "react-select2-wrapper/css/select2.css";
 import Swal from "sweetalert2";
+import AddCategory from "./AddCategory";
+import { Modal } from "react-bootstrap";
 
 const options = [
   { id: 1, text: "Choose Category", text: "Choose Category" },
@@ -60,6 +64,7 @@ const confirmText = () => {
       });
   });
 };
+
 const CategoryList = () => {
   const [inputfilter, setInputfilter] = useState(false);
 
@@ -166,6 +171,10 @@ const CategoryList = () => {
     },
   ];
 
+  const [addCategoryModal, setAddCategoryModal] = useState(false);
+
+  const handleCategoryModal = () => setAddCategoryModal(!addCategoryModal);
+
   return (
     <>
       <div className="page-wrapper">
@@ -175,16 +184,17 @@ const CategoryList = () => {
               <h4>Product Category List </h4>
               <h6>View/Search product Category</h6>
             </div>
-            <div className="page-btn">
-              <Link
-                to="/dream-pos/product/addcategory-product"
+            <div className="page-btn" onClick={addCategoryModal}>
+              <a
+                // to="/dream-pos/product/addcategory-product"
                 className="btn btn-added"
               >
                 <img src={PlusIcon} alt="img" className="me-1" />
                 Add Category
-              </Link>
+              </a>
             </div>
           </div>
+
           {/* /product list */}
           <div className="card">
             <div className="card-body">
@@ -249,6 +259,11 @@ const CategoryList = () => {
           {/* /product list */}
         </div>
       </div>
+      <Modal show={addCategoryModal} onHide={handleCategoryModal} size="xl">
+        <Modal.Body>
+          <AddCategory customSpace="m-0 p-0" />
+        </Modal.Body>
+      </Modal>
     </>
   );
 };

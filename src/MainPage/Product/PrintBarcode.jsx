@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 import React, { useState } from "react";
 import { Scanner } from "../../EntryFile/imagePath";
-import  Table  from "../../EntryFile/datatables";
+import Table from "../../EntryFile/datatables";
 import { Link } from "react-router-dom";
 import { DeleteIcon } from "../../EntryFile/imagePath";
 import Select2 from "react-select2-wrapper";
@@ -83,7 +83,7 @@ const PrintBarcode = () => {
                 </div>
               </div>
               <div className="table-responsive table-height">
-                <Table columns={columns} dataSource={data}/>
+                <Table columns={columns} dataSource={data} />
               </div>
               <div className="row">
                 <div className="col-lg-3 col-sm-6 col-12">

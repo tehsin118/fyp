@@ -24,7 +24,7 @@ import {
   Product9,
 } from "../../EntryFile/imagePath";
 
-const Sales = () => {
+const SalesR = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [startDate1, setStartDate1] = useState(new Date());
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
@@ -264,8 +264,9 @@ const Sales = () => {
               <div className="search-set">
                 <div className="search-path">
                   <a
-                    className={` btn ${inputfilter ? "btn-filter setclose" : "btn-filter"
-                      } `}
+                    className={` btn ${
+                      inputfilter ? "btn-filter setclose" : "btn-filter"
+                    } `}
                     id="filter_search"
                     onClick={() => togglefilter(!inputfilter)}
                   >
@@ -378,4 +379,4 @@ const Sales = () => {
   );
 };
 
-export default Sales;
+export default SalesR;

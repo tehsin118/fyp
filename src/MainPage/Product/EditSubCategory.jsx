@@ -3,16 +3,17 @@
 import React, { useState } from "react";
 import Select2 from "react-select2-wrapper";
 import "react-select2-wrapper/css/select2.css";
+import PropTypes from "prop-types";
 
 const options = [
   { id: 1, text: "Computers", text: "Computers" },
   { id: 2, text: "Category", text: "Category" },
 ];
 
-const EditSubCategory = () => {
+const EditSubCategory = (props) => {
   return (
     <>
-      <div className="page-wrapper">
+      <div className={`page-wrapper ${props.customSpace}`}>
         <div className="content">
           <div className="page-header">
             <div className="page-title">
@@ -61,9 +62,6 @@ const EditSubCategory = () => {
                   <a href="#" className="btn btn-submit me-2">
                     Submit
                   </a>
-                  <a href="#" className="btn btn-cancel">
-                    Cancel
-                  </a>
                 </div>
               </div>
             </div>
@@ -73,6 +71,10 @@ const EditSubCategory = () => {
       </div>
     </>
   );
+};
+
+EditSubCategory.propTypes = {
+  customSpace: PropTypes.string.isRequired, // Assuming customSpace is a string
 };
 
 export default EditSubCategory;

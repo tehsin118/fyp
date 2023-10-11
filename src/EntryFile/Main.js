@@ -1,11 +1,6 @@
 /* eslint-disable no-unused-vars */
-import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  HashRouter,
-} from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../InitialPage/App";
 // import config from "config";
 
@@ -19,9 +14,10 @@ import "../assets/css/line-awesome.min.css";
 import "../assets/css/style.css";
 
 const MainApp = () => {
-  const config = "/template/react";
+  // const config = "/template/react";
   return (
-    <Router basename={`${config}`}>
+    // <Router basename={`${config}`}>
+    <Router>
       <Switch>
         <Route path="/" component={App} />
       </Switch>

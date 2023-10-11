@@ -7,7 +7,6 @@ import SignUp from "./SignUp";
 import Pos from "./pos/pos";
 import DefaultLayout from "./Sidebar/DefaultLayout";
 import Error404 from "../MainPage/ErrorPage/Error404";
-import Error500 from "../MainPage/ErrorPage/Error500";
 export default function App() {
   // const location = useLocation();
 
@@ -37,7 +36,6 @@ export default function App() {
       <Route path="/" component={DefaultLayout} />
 
       <Route path="*" component={Error404} />
-      <Route path="/error-500" component={Error500} />
       <Route path="/pos" component={Pos} />
     </Switch>
   );

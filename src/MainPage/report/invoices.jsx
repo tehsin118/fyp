@@ -34,7 +34,7 @@ const Sales = () => {
   };
   const [data] = useState([
     {
-      id:1,
+      id: 1,
       number: "INV001",
       name: "Thomas21",
       date: "29-03-2022",
@@ -44,7 +44,7 @@ const Sales = () => {
       Status: "Paid",
     },
     {
-      id:2,
+      id: 2,
       number: "INV002",
       name: "504Benjamin",
       date: "29-03-2022",
@@ -54,7 +54,7 @@ const Sales = () => {
       Status: "Overdue",
     },
     {
-      id:3,
+      id: 3,
       number: "INV003",
       name: "James 524",
       date: "29-03-2022",
@@ -64,7 +64,7 @@ const Sales = () => {
       Status: "Overdue",
     },
     {
-      id:4,
+      id: 4,
       number: "INV004",
       name: "Bruklin2022",
       date: "29-03-2022",
@@ -74,7 +74,7 @@ const Sales = () => {
       Status: "Paid",
     },
     {
-      id:5,
+      id: 5,
       number: "INV005",
       name: "BeverlyWIN25",
       date: "29-03-2022",
@@ -84,7 +84,7 @@ const Sales = () => {
       Status: "Overdue",
     },
     {
-      id:6,
+      id: 6,
       number: "INV006",
       name: "BHR256",
       date: "29-03-2022",
@@ -94,7 +94,7 @@ const Sales = () => {
       Status: "Paid",
     },
     {
-      id:7,
+      id: 7,
       number: "INV007",
       name: "BHR256",
       date: "29-03-2022",
@@ -104,7 +104,7 @@ const Sales = () => {
       Status: "Paid",
     },
     {
-      id:8,
+      id: 8,
       number: "INV008",
       name: "BHR256",
       date: "29-03-2022",
@@ -114,7 +114,7 @@ const Sales = () => {
       Status: "Unpaid",
     },
     {
-      id:9,
+      id: 9,
       number: "INV009",
       name: "BHR256",
       date: "29-03-2022",
@@ -124,7 +124,7 @@ const Sales = () => {
       Status: "Unpaid",
     },
     {
-      id:10,
+      id: 10,
       number: "INV0010",
       name: "BHR256",
       date: "29-03-2022",
@@ -134,7 +134,7 @@ const Sales = () => {
       Status: "Unpaid",
     },
     {
-      id:11,
+      id: 11,
       number: "INV007",
       name: "BHR256",
       date: "29-03-2022",
@@ -144,7 +144,7 @@ const Sales = () => {
       Status: "Paid",
     },
     {
-      id:12,
+      id: 12,
       number: "INV008",
       name: "BHR256",
       date: "29-03-2022",
@@ -154,7 +154,7 @@ const Sales = () => {
       Status: "Unpaid",
     },
     {
-      id:13,
+      id: 13,
       number: "INV009",
       name: "BHR256",
       date: "29-03-2022",
@@ -164,7 +164,7 @@ const Sales = () => {
       Status: "Unpaid",
     },
     {
-      id:14,
+      id: 14,
       number: "INV0010",
       name: "BHR256",
       date: "29-03-2022",
@@ -344,9 +344,9 @@ const Sales = () => {
             {/* /Filter */}
             <div className="table-responsive">
               <Table
-              columns={columns}
-              dataSource={data}
-              rowKey={(record) => record.id}
+                columns={columns}
+                dataSource={data}
+                rowKey={(record) => record.id}
               />
             </div>
           </div>

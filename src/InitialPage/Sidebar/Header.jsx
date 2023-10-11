@@ -20,22 +20,10 @@ import {
   LogoWhite,
   Avatar1,
 } from "../../EntryFile/imagePath";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import FeatherIcon from "feather-icons-react";
 
-const Header = (props) => {
-  const [toggle, SetToggle] = useState(false);
-
-  const handlesidebar = () => {
-    document.body.classList.toggle("mini-sidebar");
-    SetToggle((current) => !current);
-  };
-  const expandMenu = () => {
-    document.body.classList.remove("expand-menu");
-  };
-  const expandMenuOpen = () => {
-    document.body.classList.add("expand-menu");
-  };
+const Header = () => {
   const sidebarOverlay = () => {
     document.querySelector(".main-wrapper").classList.toggle("slide-nav");
     document.querySelector(".sidebar-overlay").classList.toggle("opened");
@@ -49,10 +37,10 @@ const Header = (props) => {
       <div className="header">
         {/* Logo */}
         <div className="header-left ">
-          <Link to="/" className="logo logo-normal">
+          <NavLink to="/" className="logo logo-normal">
             {/* <img src={Logo} alt="" /> */}
             Logo Here
-          </Link>
+          </NavLink>
         </div>
         {/* /Logo */}
         <Link

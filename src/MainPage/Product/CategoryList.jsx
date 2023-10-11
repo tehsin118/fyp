@@ -29,6 +29,7 @@ import "react-select2-wrapper/css/select2.css";
 import Swal from "sweetalert2";
 import AddCategory from "./AddCategory";
 import { Modal } from "react-bootstrap";
+import EditCategory from "./EditCategory";
 
 const options = [
   { id: 1, text: "Choose Category", text: "Choose Category" },
@@ -159,9 +160,9 @@ const CategoryList = () => {
       render: () => (
         <>
           <>
-            <Link className="me-3" to="/dream-pos/product/editcategory-product">
+            <a className="me-3" onClick={handleEditCategoryModal}>
               <img src={EditIcon} alt="img" />
-            </Link>
+            </a>
             <Link className="confirm-text" to="#" onClick={confirmText}>
               <img src={DeleteIcon} alt="img" />
             </Link>
@@ -172,8 +173,11 @@ const CategoryList = () => {
   ];
 
   const [addCategoryModal, setAddCategoryModal] = useState(false);
+  const [editCategoryModal, setEditCategoryModal] = useState(false);
 
   const handleCategoryModal = () => setAddCategoryModal(!addCategoryModal);
+  const handleEditCategoryModal = () =>
+    setEditCategoryModal(!editCategoryModal);
 
   return (
     <>
@@ -184,7 +188,7 @@ const CategoryList = () => {
               <h4>Product Category List </h4>
               <h6>View/Search product Category</h6>
             </div>
-            <div className="page-btn" onClick={addCategoryModal}>
+            <div className="page-btn" onClick={handleCategoryModal}>
               <a
                 // to="/dream-pos/product/addcategory-product"
                 className="btn btn-added"
@@ -262,6 +266,15 @@ const CategoryList = () => {
       <Modal show={addCategoryModal} onHide={handleCategoryModal} size="xl">
         <Modal.Body>
           <AddCategory customSpace="m-0 p-0" />
+        </Modal.Body>
+      </Modal>
+      <Modal
+        show={editCategoryModal}
+        onHide={handleEditCategoryModal}
+        size="xl"
+      >
+        <Modal.Body>
+          <EditCategory customSpace="m-0 p-0" />
         </Modal.Body>
       </Modal>
     </>

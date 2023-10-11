@@ -1,5 +1,5 @@
 /* eslint-disable no-dupe-keys */
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Select2 from "react-select2-wrapper";
 import "react-select2-wrapper/css/select2.css";
@@ -56,7 +56,7 @@ const EmailSettings = () => {
                     Password <span className="manitory">*</span>
                   </label>
                   <div className="pass-group">
-                  <input
+                    <input
                       type={passwordShown ? "text" : "password"}
                       className=" pass-input"
                     />

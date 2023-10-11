@@ -157,6 +157,27 @@ const SignUp = (props) => {
           </div>
         </div>
       </div>
+
+      <ul>
+        <li className="odd">
+          <div className="header">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium assumenda debitis molestiae quasi facilis deleniti!
+              Amet aperiam repellendus dolor? Rem.
+            </p>
+          </div>
+          <div className="details">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+              tenetur fuga. Animi ex ut praesentium eveniet, corrupti placeat.
+              Laudantium officia dolores minus a, soluta obcaecati ex eligendi
+              molestias ducimus porro!
+            </p>
+            <img src="" alt="" />
+          </div>
+        </li>
+      </ul>
     </>
   );
 };

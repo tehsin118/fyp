@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import Table from "../../EntryFile/datatable";
-import Tabletop from "../../EntryFile/tabletop"
+import Tabletop from "../../EntryFile/tabletop";
 import { Link } from "react-router-dom";
 import Select2 from "react-select2-wrapper";
 import "react-select2-wrapper/css/select2.css";
@@ -192,7 +192,10 @@ const UserList = () => {
               <h6>Manage your User</h6>
             </div>
             <div className="page-btn">
-              <Link to="/dream-pos/people/adduser-people" className="btn btn-added">
+              <Link
+                to="/dream-pos/people/adduser-people"
+                className="btn btn-added"
+              >
                 <img src={PlusIcon} alt="img" className="me-1" />
                 Add User
               </Link>
@@ -201,12 +204,12 @@ const UserList = () => {
           {/* /product list */}
           <div className="card">
             <div className="card-body">
-            <Tabletop inputfilter={inputfilter} togglefilter={togglefilter} />
+              <Tabletop inputfilter={inputfilter} togglefilter={togglefilter} />
               {/* /Filter */}
               <div
-                className={`card mb-0 ${ inputfilter ? "toggleCls" : ""}`}
+                className={`card mb-0 ${inputfilter ? "toggleCls" : ""}`}
                 id="filter_inputs"
-                style={{ display: inputfilter ? "block" :"none"}}
+                style={{ display: inputfilter ? "block" : "none" }}
               >
                 <div className="card-body pb-0">
                   <div className="row">

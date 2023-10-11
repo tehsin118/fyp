@@ -30,6 +30,7 @@ import Select2 from "react-select2-wrapper";
 import "react-select2-wrapper/css/select2.css";
 import { Modal } from "react-bootstrap";
 import AddSubCategory from "./AddSubCategory";
+import EditSubCategory from "./EditSubCategory";
 
 const SubCategoryList = () => {
   const options2 = [
@@ -173,10 +174,7 @@ const SubCategoryList = () => {
       render: () => (
         <>
           <>
-            <Link
-              className="me-3"
-              to="/dream-pos/product/editsubcategory-product"
-            >
+            <Link className="me-3" to="#" onClick={handleEditSubCatModal}>
               <img src={EditIcon} alt="img" />
             </Link>
             <Link className="confirm-text" to="#" onClick={confirmText}>
@@ -189,8 +187,10 @@ const SubCategoryList = () => {
   ];
 
   const [addSubCatModal, setAddSubCatModal] = useState(false);
+  const [editSubCatModal, setEditSubCatModal] = useState(false);
 
   const handleSubCatModal = () => setAddSubCatModal(!addSubCatModal);
+  const handleEditSubCatModal = () => setEditSubCatModal(!editSubCatModal);
 
   return (
     <>
@@ -279,8 +279,12 @@ const SubCategoryList = () => {
 
       <Modal show={addSubCatModal} onHide={handleSubCatModal} size="xl">
         <Modal.Body>
-          {" "}
           <AddSubCategory customSpace="m-0 p-0" />{" "}
+        </Modal.Body>
+      </Modal>
+      <Modal show={editSubCatModal} onHide={handleEditSubCatModal} size="xl">
+        <Modal.Body>
+          <EditSubCategory customSpace="m-0 p-0" />{" "}
         </Modal.Body>
       </Modal>
     </>

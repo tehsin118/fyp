@@ -27,6 +27,7 @@ import {
 } from "../../EntryFile/imagePath";
 import Swal from "sweetalert2";
 import AddBrand from "./AddBrand";
+import EditBrand from "./EditBrand";
 
 const BrandList = () => {
   const [inputfilter, setInputfilter] = useState(false);
@@ -108,7 +109,7 @@ const BrandList = () => {
       render: () => (
         <>
           <>
-            <Link className="me-3" to="/dream-pos/product/editbrand-product">
+            <Link className="me-3" to="#" onClick={handleEditBrandModal}>
               <img src={EditIcon} alt="img" />
             </Link>
             <Link className="confirm-text" to="#" onClick={confirmText}>
@@ -120,8 +121,9 @@ const BrandList = () => {
     },
   ];
   const [addBrandModal, setAddBrandModal] = useState(false);
-
+  const [editBrandModal, setEditBrandModal] = useState(false);
   const handleBrandModal = () => setAddBrandModal(!addBrandModal);
+  const handleEditBrandModal = () => setEditBrandModal(!editBrandModal);
   return (
     <>
       <div className="page-wrapper">
@@ -186,10 +188,14 @@ const BrandList = () => {
           {/* /product list */}
         </div>
       </div>
-
       <Modal show={addBrandModal} onHide={handleBrandModal} size="xl">
         <Modal.Body>
           <AddBrand customSpace="m-0 p-0" />
+        </Modal.Body>
+      </Modal>
+      <Modal show={editBrandModal} onHide={handleEditBrandModal} size="xl">
+        <Modal.Body>
+          <EditBrand customSpace="m-0 p-0" />
         </Modal.Body>
       </Modal>
     </>

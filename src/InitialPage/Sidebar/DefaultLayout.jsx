@@ -5,11 +5,7 @@ import Dashboard from "../../MainPage/Dashboard";
 import { Scrollbars } from "react-custom-scrollbars";
 import FeatherIcon from "feather-icons-react";
 
-import { Link } from "react-router-dom";
-
 import CategoryList from "../../MainPage/Product/CategoryList";
-import BrandList from "../../MainPage/Product/BrandList";
-import SubCategoryList from "../../MainPage/Product/SubCategoryTable";
 import PrintBarcode from "../../MainPage/Product/PrintBarcode";
 import ImportProduct from "../../MainPage/Product/ImportProduct";
 import ProductList from "../../MainPage/Product/ProductList";
@@ -20,6 +16,8 @@ import UserList from "../../MainPage/People/UserList";
 import SalesR from "../../MainPage/report/sales";
 import EmailSettings from "../../MainPage/settings/email";
 import Taxrates from "../../MainPage/settings/taxrates";
+import StoreList from "../../MainPage/People/StoreList";
+import { useHistory } from "react-router-dom";
 
 const DefaultLayout = () => {
   // const { match } = props;
@@ -31,6 +29,12 @@ const DefaultLayout = () => {
   // if (location.pathname == "/") {
   //   setPath("dashboard");
   // }
+
+  const history = useHistory();
+
+  const handleNavigate = () => {
+    history.push("/pos");
+  };
 
   return (
     <>
@@ -56,65 +60,6 @@ const DefaultLayout = () => {
                             <span>Dashboard</span>
                           </a>
                         </li>
-                        {/* <li className="submenu d-none">
-                          <Link
-                            to="#"
-                            className={
-                              pathname.includes("/dream-pos/application")
-                                ? "subdrop active"
-                                : "" || isSideMenu == "Application"
-                                ? "subdrop active"
-                                : ""
-                            }
-                            onClick={() =>
-                              toggleSidebar(
-                                isSideMenu == "Application" ? "" : "Application"
-                              )
-                            }
-                          >
-                            <FeatherIcon icon="smartphone" />
-                            <span> Application</span>{" "}
-                            <span className="menu-arrow" />
-                          </Link>
-                          {isSideMenu == "Application" ? (
-                            <ul>
-                              <li>
-                                <Link
-                                  to="/dream-pos/application/chat"
-                                  className={
-                                    pathname.includes("chat") ? "active" : ""
-                                  }
-                                >
-                                  Chat
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  to="/dream-pos/application/calendar"
-                                  className={
-                                    pathname.includes("calendar")
-                                      ? "active"
-                                      : ""
-                                  }
-                                >
-                                  Calendar
-                                </Link>
-                              </li>
-                              <li>
-                                <Link
-                                  to="/dream-pos/application/email"
-                                  className={
-                                    pathname.includes("email") ? "active" : ""
-                                  }
-                                >
-                                  Email
-                                </Link>
-                              </li>
-                            </ul>
-                          ) : (
-                            ""
-                          )}
-                        </li> */}
                       </ul>
                     </li>
 
@@ -145,52 +90,30 @@ const DefaultLayout = () => {
                           </a>
                         </li>
 
-                        {/* brands */}
-                        <li
-                          className={path == "brandlist" ? "active" : ""}
-                          onClick={() => setPath("brandlist")}
-                        >
-                          <a>
-                            {/* <i data-feather="tag" /> */}
-                            <FeatherIcon icon="tag" />
-                            <span>Brands</span>
-                          </a>
-                        </li>
-
-                        {/* subcategory */}
-                        <li
-                          className={path == "subcategory" ? "active" : ""}
-                          onClick={() => setPath("subcategory")}
-                        >
-                          <a>
-                            <FeatherIcon icon="speaker" />
-                            <span>Sub Category</span>
-                          </a>
-                        </li>
-
                         {/* barcode */}
+                        <div className="d-none">
+                          <li
+                            className={path == "printbarcode" ? "active" : ""}
+                            onClick={() => setPath("printbarcode")}
+                          >
+                            <a>
+                              <FeatherIcon icon="align-justify" />
+                              <span>Print Barcode</span>
+                            </a>
+                          </li>
 
-                        <li
-                          className={path == "printbarcode" ? "active" : ""}
-                          onClick={() => setPath("printbarcode")}
-                        >
-                          <a>
-                            <FeatherIcon icon="align-justify" />
-                            <span>Print Barcode</span>
-                          </a>
-                        </li>
+                          {/* import products */}
 
-                        {/* import products */}
-
-                        <li
-                          className={path == "importproduct" ? "active" : ""}
-                          onClick={() => setPath("importproduct")}
-                        >
-                          <a>
-                            <FeatherIcon icon="minimize-2" />
-                            <span>Import Products</span>
-                          </a>
-                        </li>
+                          <li
+                            className={path == "importproduct" ? "active" : ""}
+                            onClick={() => setPath("importproduct")}
+                          >
+                            <a>
+                              <FeatherIcon icon="minimize-2" />
+                              <span>Import Products</span>
+                            </a>
+                          </li>
+                        </div>
                       </ul>
                     </li>
 
@@ -219,97 +142,32 @@ const DefaultLayout = () => {
                           </a>
                         </li>
                         {/* pos */}
-                        <li className={path == "pos" ? "active" : ""}>
-                          <Link to="/pos">
+                        <li
+                          className={path == "pos" ? "active" : ""}
+                          onClick={handleNavigate}
+                        >
+                          <a>
                             <FeatherIcon icon="shopping-cart" />
-                            <span>POS</span>
-                          </Link>
+                            <span>Pos</span>
+                          </a>
                         </li>
                       </ul>
                     </li>
-
-                    {/* purchase */}
-                    {/* <li className="submenu-open d-none">
-                      <h6 className="submenu-hdr">Purchases</h6>
-                      <ul>
-                        <li
-                          className={
-                            pathname.includes("purchaselist-purchase")
-                              ? "active"
-                              : ""
-                          }
-                        >
-                          <Link
-                            className={
-                              pathname.includes("purchaselist-") ? "active" : ""
-                            }
-                            to="/dream-pos/purchase/purchaselist-purchase"
-                          >
-                            <FeatherIcon icon="shopping-bag" />
-                            <span>Purchases</span>
-                          </Link>
-                        </li>
-                        <li
-                          className={
-                            pathname.includes("importpurchase-purchase")
-                              ? "active"
-                              : ""
-                          }
-                        >
-                          <Link
-                            className={
-                              pathname.includes("importpurchase-")
-                                ? "active"
-                                : ""
-                            }
-                            to="/dream-pos/purchase/importpurchase-purchase"
-                          >
-                            <FeatherIcon icon="minimize-2" />
-                            <span>Import Purchases</span>
-                          </Link>
-                        </li>
-                        <li
-                          className={
-                            pathname.includes("purchaseorderreport")
-                              ? "active"
-                              : ""
-                          }
-                        >
-                          <Link
-                            to="/dream-pos/report/purchaseorderreport"
-                            className={
-                              pathname.includes("purchaseorderreport")
-                                ? "active"
-                                : ""
-                            }
-                          >
-                            <FeatherIcon icon="file-minus" />
-                            <span>Purchase Order</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link to="/dream-pos/return/purchasereturnlist-return">
-                            <FeatherIcon icon="refresh-cw" />
-                            Purchase Return
-                          </Link>
-                        </li>
-                      </ul>
-                    </li> */}
 
                     {/* people */}
                     <li className="submenu-open">
                       <h6 className="submenu-hdr">Peoples</h6>
                       <ul>
-                        {/* supplier */}
-                        {/* <li
-                          className={path == "supplierlist" ? "active" : ""}
-                          onClick={() => setPath("supplierlist")}
+                        {/* store */}
+                        <li
+                          className={path == "store" ? "active" : ""}
+                          onClick={() => setPath("store")}
                         >
                           <a>
-                            <FeatherIcon icon="users" />
-                            <span>Supplier</span>
+                            <FeatherIcon icon="home" />
+                            <span>Store</span>
                           </a>
-                        </li> */}
+                        </li>
                         {/* user */}
                         <li
                           className={path == "userlist" ? "active" : ""}
@@ -384,12 +242,11 @@ const DefaultLayout = () => {
         <div>{path == "dashboard" ? <Dashboard /> : <></>}</div>
         <div>{path == "productlist" ? <ProductList /> : <></>}</div>
         <div>{path == "categorylist" ? <CategoryList /> : <></>}</div>
-        <div>{path == "brandlist" ? <BrandList /> : <></>}</div>
-        <div>{path == "subcategory" ? <SubCategoryList /> : <></>}</div>
         <div>{path == "printbarcode" ? <PrintBarcode /> : <></>}</div>
         <div>{path == "importproduct" ? <ImportProduct /> : <></>}</div>
 
         {/* sales */}
+        <div>{path == "store" ? <StoreList /> : <></>}</div>
         <div>{path == "saleslist" ? <SalesList /> : <></>}</div>
         <div>{path == "invoicereport" ? <Sales /> : <></>}</div>
         <div>{path == "supplierlist" ? <Supplier /> : <></>}</div>

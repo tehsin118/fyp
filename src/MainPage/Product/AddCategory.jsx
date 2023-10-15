@@ -1,5 +1,4 @@
 import React from "react";
-import { Upload } from "../../EntryFile/imagePath";
 import PropTypes from "prop-types";
 
 const AddCategory = (props) => {
@@ -23,30 +22,14 @@ const AddCategory = (props) => {
                     <input type="text" />
                   </div>
                 </div>
-                <div className="col-lg-6 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>Category Code</label>
-                    <input type="text" />
-                  </div>
-                </div>
+
                 <div className="col-lg-12">
                   <div className="form-group">
                     <label>Description</label>
                     <textarea className="form-control" defaultValue={""} />
                   </div>
                 </div>
-                <div className="col-lg-12">
-                  <div className="form-group">
-                    <label> Product Image</label>
-                    <div className="image-upload">
-                      <input type="file" />
-                      <div className="image-uploads">
-                        <img src={Upload} alt="img" />
-                        <h4>Drag and drop a file to upload</h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
                 <div className="col-lg-12">
                   <button className="btn btn-submit ">Submit</button>
                 </div>

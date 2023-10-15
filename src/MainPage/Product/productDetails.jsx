@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
-import { Link } from "react-router-dom";
 import { barcode1, Printer, Product69 } from "../../EntryFile/imagePath";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -24,9 +23,9 @@ const ProductDetails = (props) => {
               <div className="card-body">
                 <div className="bar-code-view">
                   <img src={barcode1} alt="barcode" />
-                  <Link to="#" className="printimg">
+                  <a className="printimg">
                     <img src={Printer} alt="print" />
-                  </Link>
+                  </a>
                 </div>
                 <div className="productdetails">
                   <ul className="product-bar">
@@ -38,46 +37,17 @@ const ProductDetails = (props) => {
                       <h4>Category</h4>
                       <h6>Computers</h6>
                     </li>
-                    <li>
-                      <h4>Sub Category</h4>
-                      <h6>None</h6>
-                    </li>
-                    <li>
-                      <h4>Brand</h4>
-                      <h6>None</h6>
-                    </li>
-                    <li>
-                      <h4>Unit</h4>
-                      <h6>Piece</h6>
-                    </li>
-                    <li>
-                      <h4>SKU</h4>
-                      <h6>PT0001</h6>
-                    </li>
-                    <li>
-                      <h4>Minimum Qty</h4>
-                      <h6>5</h6>
-                    </li>
+
                     <li>
                       <h4>Quantity</h4>
                       <h6>50</h6>
                     </li>
-                    <li>
-                      <h4>Tax</h4>
-                      <h6>0.00 %</h6>
-                    </li>
-                    <li>
-                      <h4>Discount Type</h4>
-                      <h6>Percentage</h6>
-                    </li>
+
                     <li>
                       <h4>Price</h4>
                       <h6>1500.00</h6>
                     </li>
-                    <li>
-                      <h4>Status</h4>
-                      <h6>Active</h6>
-                    </li>
+
                     <li>
                       <h4>Description</h4>
                       <h6>

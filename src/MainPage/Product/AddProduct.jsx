@@ -69,30 +69,7 @@ const AddProduct = (props) => {
                     />
                   </div>
                 </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>Sub Category</label>
-                    <Select2
-                      className="select"
-                      data={options1}
-                      options={{
-                        placeholder: "Choose Sub Category",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>Brand</label>
-                    <Select2
-                      className="select"
-                      data={options2}
-                      options={{
-                        placeholder: "Choose Brand",
-                      }}
-                    />
-                  </div>
-                </div>
+                {/*                
                 <div className="col-lg-3 col-sm-6 col-12">
                   <div className="form-group">
                     <label>Unit</label>
@@ -104,22 +81,28 @@ const AddProduct = (props) => {
                       }}
                     />
                   </div>
-                </div>
-                <div className="col-lg-3 col-sm-6 col-12">
+                </div> */}
+                {/* <div className="col-lg-3 col-sm-6 col-12">
                   <div className="form-group">
                     <label>SKU</label>
                     <input type="text" />
                   </div>
-                </div>
-                <div className="col-lg-3 col-sm-6 col-12">
+                </div> */}
+                {/* <div className="col-lg-3 col-sm-6 col-12">
                   <div className="form-group">
                     <label>Minimum Qty</label>
+                    <input type="text" />
+                  </div>
+                </div> */}
+                <div className="col-lg-3 col-sm-6 col-12">
+                  <div className="form-group">
+                    <label>Quantity</label>
                     <input type="text" />
                   </div>
                 </div>
                 <div className="col-lg-3 col-sm-6 col-12">
                   <div className="form-group">
-                    <label>Quantity</label>
+                    <label>Price</label>
                     <input type="text" />
                   </div>
                 </div>
@@ -129,48 +112,7 @@ const AddProduct = (props) => {
                     <textarea className="form-control" defaultValue={""} />
                   </div>
                 </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>Tax</label>
-                    <Select2
-                      className="select"
-                      data={options4}
-                      options={{
-                        placeholder: "Choose Tax",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>Discount Type</label>
-                    <Select2
-                      className="select"
-                      data={options5}
-                      options={{
-                        placeholder: "Percentage",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>Price</label>
-                    <input type="text" />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label> Status</label>
-                    <Select2
-                      className="select"
-                      data={options6}
-                      options={{
-                        placeholder: "Choose Product",
-                      }}
-                    />
-                  </div>
-                </div>
+
                 <div className="col-lg-12">
                   <div className="form-group">
                     <label> Product Image</label>

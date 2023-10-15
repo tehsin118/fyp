@@ -40,14 +40,7 @@ const ProductList = () => {
     { id: 2, text: "Computers", text: "Computers" },
     { id: 3, text: "Fruits", text: "Fruits" },
   ];
-  const options3 = [
-    { id: 1, text: "Choose Sub Category", text: "Choose Sub Category" },
-    { id: 2, text: "Computers", text: "Computers" },
-  ];
-  const options4 = [
-    { id: 1, text: "Brand", text: "Brand" },
-    { id: 2, text: "N/D", text: "N/D" },
-  ];
+
   const options5 = [
     { id: 1, text: "Price", text: "Price" },
     { id: 2, text: "150.00", text: "150.00" },
@@ -242,41 +235,29 @@ const ProductList = () => {
       ),
       sorter: (a, b) => a.productName.length - b.productName.length,
     },
-    {
-      title: "SKU",
-      dataIndex: "sku",
-      sorter: (a, b) => a.sku.length - b.sku.length,
-    },
+    // {
+    //   title: "SKU",
+    //   dataIndex: "sku",
+    //   sorter: (a, b) => a.sku.length - b.sku.length,
+    // },
     {
       title: "Category",
       dataIndex: "category",
       sorter: (a, b) => a.category.length - b.category.length,
     },
-    {
-      title: "Brand",
-      dataIndex: "brand",
-      sorter: (a, b) => a.brand.length - b.brand.length,
-    },
+
     {
       title: "Price",
       dataIndex: "price",
       sorter: (a, b) => a.price.length - b.price.length,
     },
+
     {
-      title: "Unit",
-      dataIndex: "unit",
-      sorter: (a, b) => a.unit.length - b.unit.length,
-    },
-    {
-      title: "Qty",
+      title: "In Stock",
       dataIndex: "qty",
       sorter: (a, b) => a.qty.length - b.qty.length,
     },
-    {
-      title: "Created By",
-      dataIndex: "createdBy",
-      sorter: (a, b) => a.createdBy.length - b.createdBy.length,
-    },
+
     {
       title: "Action",
       render: () => (
@@ -362,28 +343,7 @@ const ProductList = () => {
                             />
                           </div>
                         </div>
-                        <div className="col-lg col-sm-6 col-12">
-                          <div className="form-group">
-                            <Select2
-                              className="select"
-                              data={options3}
-                              options={{
-                                placeholder: "Choose Sub Category",
-                              }}
-                            />
-                          </div>
-                        </div>
-                        <div className="col-lg col-sm-6 col-12">
-                          <div className="form-group">
-                            <Select2
-                              className="select"
-                              data={options4}
-                              options={{
-                                placeholder: "Brand",
-                              }}
-                            />
-                          </div>
-                        </div>
+
                         <div className="col-lg col-sm-6 col-12 ">
                           <div className="form-group">
                             <Select2

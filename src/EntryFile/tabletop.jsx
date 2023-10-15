@@ -2,18 +2,18 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Tooltip as ReactTooltip } from 'react-tooltip';
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 import {
-    ClosesIcon,
-    Excel,
-    Filter,
-    Pdf,
-    Printer,
-    Search
-  } from "../EntryFile/imagePath";
+  ClosesIcon,
+  Excel,
+  Filter,
+  Pdf,
+  Printer,
+  Search,
+} from "../EntryFile/imagePath";
 
-const Tabletop = ({inputfilter,togglefilter}) => {
+const Tabletop = ({ inputfilter, togglefilter }) => {
   return (
     <div className="table-top">
       <div className="search-set">
@@ -23,7 +23,7 @@ const Tabletop = ({inputfilter,togglefilter}) => {
               inputfilter ? "btn-filter setclose" : "btn-filter"
             } `}
             id="filter_search"
-            onClick={() => togglefilter(!inputfilter)}
+            // onClick={() => togglefilter(!inputfilter)}
           >
             <img src={Filter} alt="img" />
             <span>
@@ -45,16 +45,16 @@ const Tabletop = ({inputfilter,togglefilter}) => {
       <div className="wordset">
         <ul>
           <ReactTooltip place="top" type="dark" effect="solid" />
-          <li>
+          {/* <li>
             <a data-tip="Pdf">
               <img src={Pdf} alt="img" />
             </a>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <a data-tip="Excel">
               <img src={Excel} alt="img" />
             </a>
-          </li>
+          </li> */}
           <li>
             <a data-tip="Print">
               <img src={Printer} alt="img" />

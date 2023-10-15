@@ -24,12 +24,7 @@ const EditCategory = (props) => {
                     <input type="text" defaultValue="Computers" />
                   </div>
                 </div>
-                <div className="col-lg-6 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>Category Code</label>
-                    <input type="text" defaultValue="CT001" />
-                  </div>
-                </div>
+
                 <div className="col-lg-12">
                   <div className="form-group">
                     <label>Description</label>
@@ -39,40 +34,7 @@ const EditCategory = (props) => {
                     />
                   </div>
                 </div>
-                <div className="col-lg-12">
-                  <div className="form-group">
-                    <label> Product Image</label>
-                    <div className="image-upload">
-                      <input type="file" />
-                      <div className="image-uploads">
-                        <img src={Upload} alt="img" />
-                        <h4>Drag and drop a file to upload</h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12">
-                  <div className="product-list">
-                    <ul className="row">
-                      <li className="ps-0">
-                        <div className="productviews">
-                          <div className="productviewsimg">
-                            <img src={Samsung} alt="img" />
-                          </div>
-                          <div className="productviewscontent">
-                            <div className="productviewsname">
-                              <h2>samsung</h2>
-                              <h3>581kb</h3>
-                            </div>
-                            <a href="#" className="hideset">
-                              x
-                            </a>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+
                 <div className="col-lg-12">
                   <button className="btn btn-submit me-2">Submit</button>
                 </div>

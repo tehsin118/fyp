@@ -54,6 +54,7 @@ const EditProduct = (props) => {
                     <input type="text" defaultValue="Macbook pro" />
                   </div>
                 </div>
+                {/* Category */}
                 <div className="col-lg-3 col-sm-6 col-12">
                   <div className="form-group">
                     <label>Category</label>
@@ -66,60 +67,20 @@ const EditProduct = (props) => {
                     />
                   </div>
                 </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>Sub Category</label>
-                    <Select2
-                      className="select"
-                      data={options2}
-                      options={{
-                        placeholder: "Sub Category",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>Brand</label>
-                    <Select2
-                      className="select"
-                      data={options2}
-                      options={{
-                        placeholder: "Brand",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>Unit</label>
-                    <Select2
-                      className="select"
-                      data={options4}
-                      options={{
-                        placeholder: "Unit",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>SKU</label>
-                    <input type="text" defaultValue="PT0002" />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>Minimum Qty</label>
-                    <input type="text" defaultValue={5} />
-                  </div>
-                </div>
+                {/*Min Quantity */}
                 <div className="col-lg-3 col-sm-6 col-12">
                   <div className="form-group">
                     <label>Quantity</label>
-                    <input type="text" defaultValue={50} />
+                    <input type="text" defaultValue={5} />
+                  </div>
+                </div>{" "}
+                <div className="col-lg-3 col-sm-6 col-12">
+                  <div className="form-group">
+                    <label>Price</label>
+                    <input type="text" defaultValue={5} />
                   </div>
                 </div>
+                {/* Description */}
                 <div className="col-lg-12">
                   <div className="form-group">
                     <label>Description</label>
@@ -128,48 +89,6 @@ const EditProduct = (props) => {
                       defaultValue={
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
                       }
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>Tax</label>
-                    <Select2
-                      className="select"
-                      data={options5}
-                      options={{
-                        placeholder: "Tax",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>Discount Type</label>
-                    <Select2
-                      className="select"
-                      data={options6}
-                      options={{
-                        placeholder: "Discount Type",
-                      }}
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label>Price</label>
-                    <input type="text" defaultValue={1500.0} />
-                  </div>
-                </div>
-                <div className="col-lg-3 col-sm-6 col-12">
-                  <div className="form-group">
-                    <label> Status</label>
-                    <Select2
-                      className="select"
-                      data={options7}
-                      options={{
-                        placeholder: "Status",
-                      }}
                     />
                   </div>
                 </div>

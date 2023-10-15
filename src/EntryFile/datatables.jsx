@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Table } from "antd";
 import "./antd.css";
 

@@ -2,16 +2,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import App from "../InitialPage/App";
-// import config from "config";
-
-// import "../assets/plugins/fontawesome/css/fontawesome.min.css";
-// import "../assets/plugins/fontawesome/css/all.min.css";
 import "../assets/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/js/bootstrap.bundle.min.js";
-// import "../assets/css/font-awesome.min.css";
 import "../assets/css/line-awesome.min.css";
 import "../assets/css/style.css";
+import SignUp from "../InitialPage/SignUp";
+import Pos from "../InitialPage/pos/pos";
 
 const MainApp = () => {
   // const config = "/template/react";
@@ -20,6 +17,8 @@ const MainApp = () => {
     <Router>
       <Switch>
         <Route path="/" component={App} />
+        <Route path="/signup" component={SignUp} />
+        <Route path="/pos" component={Pos} />
       </Switch>
     </Router>
   );

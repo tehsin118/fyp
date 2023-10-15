@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import {
   Logo,
   Closes,
@@ -29,8 +29,6 @@ const Header = () => {
     document.querySelector(".sidebar-overlay").classList.toggle("opened");
     document.querySelector("html").classList.toggle("menu-opened");
   };
-
-  let pathname = location.pathname;
 
   return (
     <>

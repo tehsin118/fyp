@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import App from "../InitialPage/App";
 import "../assets/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,16 +11,14 @@ import SignUp from "../InitialPage/SignUp";
 import Pos from "../InitialPage/pos/pos";
 
 const MainApp = () => {
-  // const config = "/template/react";
   return (
-    // <Router basename={`${config}`}>
-    <Router>
-      <Switch>
-        <Route path="/" component={App} />
-        <Route path="/signup" component={SignUp} />
-        <Route path="/pos" component={Pos} />
-      </Switch>
-    </Router>
+    // <Router>
+    <Routes>
+      <Route path="/" component={App} />
+      <Route path="/signup" component={SignUp} />
+      <Route path="/pos" component={Pos} />
+    </Routes>
+    // </Router>
   );
 };
 

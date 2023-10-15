@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from 'react-router-dom'
-import {Bruklin,Profile3,Profile4,Profile5} from "../EntryFile/imagePath";
+import { Link } from "react-router-dom";
+import { Bruklin, Profile3, Profile4, Profile5 } from "../EntryFile/imagePath";
 
 const Activities = () => {
   return (
@@ -36,8 +36,7 @@ const Activities = () => {
                     <Link to="/dream-pos/profile/user-profile" className="name">
                       Elwis Mathew{" "}
                     </Link>{" "}
-                    added a new product{" "}
-                    <Link to="#">Redmi Pro 7 Mobile</Link>
+                    added a new product <Link to="#">Redmi Pro 7 Mobile</Link>
                     <span className="time">4 mins ago</span>
                   </div>
                 </div>
@@ -86,7 +85,10 @@ const Activities = () => {
                 <div className="activity-content">
                   <div className="timeline-content">
                     <div className="timeline-content">
-                      <Link to="/dream-pos/profile/user-profile" className="name">
+                      <Link
+                        to="/dream-pos/profile/user-profile"
+                        className="name"
+                      >
                         William Smith
                       </Link>{" "}
                       added a new sales list for
@@ -116,8 +118,7 @@ const Activities = () => {
                     <Link to="/dream-pos/profile/user-profile" className="name">
                       Lesley Grauer
                     </Link>{" "}
-                    has updated invoice{" "}
-                    <Link to="#">#987654</Link>
+                    has updated invoice <Link to="#">#987654</Link>
                     <span className="time">4 mins ago</span>
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import SignIn from "./SignIn";
 import ForgetPassword from "./ForgetPassword";
@@ -9,7 +9,7 @@ import DefaultLayout from "./Sidebar/DefaultLayout";
 import Error404 from "../MainPage/ErrorPage/Error404";
 export default function App() {
   return (
-    <Switch>
+    <Routes>
       <Route path="/signIn" component={SignIn} />
       <Route path="/forgetPassword" component={ForgetPassword} />
       <Route path="/signUp" component={SignUp} />
@@ -17,6 +17,6 @@ export default function App() {
 
       <Route path="*" component={Error404} />
       <Route path="/pos" component={Pos} />
-    </Switch>
+    </Routes>
   );
 }

@@ -1,13 +1,13 @@
 import React from "react";
 import { LoginImage, MailIcon } from "../EntryFile/imagePath";
 import { Helmet } from "react-helmet";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ForgotPassword = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleNavigate = () => {
-    history.push("/");
+    navigate("/");
   };
 
   return (

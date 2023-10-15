@@ -17,23 +17,16 @@ import SalesR from "../../MainPage/report/sales";
 import EmailSettings from "../../MainPage/settings/email";
 import Taxrates from "../../MainPage/settings/taxrates";
 import StoreList from "../../MainPage/People/StoreList";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const DefaultLayout = () => {
   // const { match } = props;
   // const [isSideMenu, setSideMenu] = useState("");
   const [path, setPath] = useState("dashboard");
-
-  // const location = useLocation();
-
-  // if (location.pathname == "/") {
-  //   setPath("dashboard");
-  // }
-
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleNavigate = () => {
-    history.push("/pos");
+    navigate("/pos");
   };
 
   return (
@@ -120,7 +113,7 @@ const DefaultLayout = () => {
                     {/* sales */}
 
                     <li className="submenu-open">
-                      <h6 className="submenu-hdr">Sales</h6>
+                      <h6 className="submenu-hdr">Sales </h6>
                       <ul>
                         <li
                           className={path == "saleslist" ? "active" : ""}
